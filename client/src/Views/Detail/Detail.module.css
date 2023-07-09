@@ -1,0 +1,112 @@
+.Detail{
+    /* background-color: white; */
+    text-transform: capitalize;
+    color: white;
+    display: flex;
+    background: linear-gradient(
+        80deg,
+        rgba(21, 21, 21, 0.72) 100%,
+        rgba(19, 8, 48, 0.7) 50%
+    );
+}
+.Card{
+    display: flex;
+}
+.image{
+    background-color:  rgba(21, 21, 21, 0.92);
+    margin: 10% 1%;
+    margin-left: 15%;
+    border-radius: .5rem;
+    text-align: center;
+}
+.header{
+    opacity: 95%;
+    font-size: 20px;
+
+}
+.filtericon{
+    filter: invert(100%);
+}
+
+.platforms{
+    opacity: 80%;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.availablePlatforms{
+    gap: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.icon{
+    width: 80px;
+}
+
+.image span{
+    font-size: 12px;
+    opacity: 70%;
+    color: white;
+    margin: 1rem;
+}
+.image h2{
+    font-size: 24px;
+    margin: 1rem;
+}
+.image img{
+    width: 350px;
+    position: relative;
+    margin: 1rem;
+}
+.image h2{
+    margin: 1rem;
+}
+.image p{
+    margin: 1rem;
+    font-size: 15px;
+    opacity: 60%;
+}
+.info{
+    background: linear-gradient(
+        80deg,
+        rgba(21, 21, 21, 0.852) 100%,
+        rgba(19, 8, 48, 0.7) 50%
+    );
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: 10% 5%;
+    margin-left: 0;
+
+}
+.info h1{
+    opacity: 95%;
+    font-size:35px;
+}
+.info p{
+    opacity: 70%;
+    font-size: 15px;
+    line-height: 1.5rem;
+}
+.info h4{
+    opacity: 90%;
+    margin: 0;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+.button button{
+    border-radius: .5rem;
+    background-color: rgba(30,178,224,70%);
+    color: white;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    font-weight: 600;
+
+}

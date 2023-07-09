@@ -1,0 +1,117 @@
+.aboutMe{
+    background-color: rgb(13, 10, 10);
+    display: flex;
+    flex-direction: row;
+    color: white;
+    /* flex-wrap: wrap; */
+}
+.aboutMe img{
+    height: 100vh;
+    /* width: 50%; */
+}
+.aboutMe button{
+    position: absolute;
+    z-index: 4;
+    position:absolute;
+    top: 2vh;
+    left: 2%;
+    background-color: rgb(247, 243, 14);
+    border: 2px solid rgb(177, 176, 176);
+    padding: .6rem 1.4rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+}
+.right{
+    /* margin: 1rem; */
+    justify-content: center;
+    text-align: center;
+}
+span{
+    color: rgb(247, 243, 14);;
+}
+.right h1{
+    position: relative;
+    left: 2%;
+    color: white;
+    color: white;
+}
+.right p{
+    text-align: center;
+    margin: 2rem;
+    font-size: 20px;
+    line-height: 4rem;
+    padding: 0rem 2rem;
+}
+.nav{
+    background-color: rgb(52, 50, 50,50%);
+}
+.nav ul{
+    display: flex;
+    gap: 6rem;
+    list-style: none;
+}
+.nav li{
+    padding: .2rem 1rem;
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.socials{
+    margin: 2rem;
+}
+.socials:first-of-type{
+    filter: invert(100%);
+}
+.socials:nth-of-type(2){
+    filter: invert(100%);
+}
+
+.Portafolio{
+    justify-content: center;
+}
+.rainbowHover {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff7576;
+    background-color: #2B3044;
+    position: relative;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    position: relative;
+    line-height: 24px;
+    border-radius: 9px;
+    box-shadow: 0px 1px 2px #2B3044,
+      0px 4px 16px #2B3044;
+    transform-style: preserve-3d;
+    transform: scale(var(--s, 1)) perspective(600px)
+      rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    perspective: 600px;
+    transition: transform 0.1s;
+    width: 40%;
+    left: 20%;
+  }
+  
+  .sp {
+    background: linear-gradient(
+        90deg,
+        #866ee7,
+        #ea60da,
+        #ed8f57,
+        #fbd41d,
+        #2cca91
+      );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    display: block;
+  }
+  
+  .rainbowHover:active {
+    transition: 0.3s;
+    transform: scale(0.93);
+  }

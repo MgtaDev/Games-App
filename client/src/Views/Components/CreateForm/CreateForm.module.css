@@ -1,0 +1,161 @@
+.Form{
+    display: flex;
+    background: linear-gradient(
+        80deg,
+        rgba(34,56,54,80%) 100%,
+        rgba(15, 47, 44, 0.7) 50%
+    );
+    justify-content: center;
+}
+.Form p{
+    color: white;
+}
+.Form img{
+    width:58%;
+    height: 120vh;
+}
+.Form img:last-of-type{
+    position: absolute;
+    width: 350px;
+    height: 600px;
+    top: 20%;
+    left: 20%;
+}
+.Content{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(25, 24, 24, 65%);
+    width: 600px;
+
+}
+.Form h2{
+    background-color: rgba(25, 24, 24, 80%);
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 95%;
+    font-size: 35px;
+    opacity: 70%;;
+    color: white;
+    
+}
+.Content label{
+    display: flex;
+    position: relative;
+    left: 3%;
+    opacity: 60%;
+    font-size: 18px;
+    color: white;
+    margin: .5rem;
+}
+.Content input{
+    margin: 1rem;
+    display: flex;
+    margin-left: 1.5rem;
+    padding: .6rem 1rem;
+    border-radius: .3rem;
+    border: 2px solid rgb(219, 219, 219);
+    background-color: rgba(50, 50, 50, 0.473);
+    color: white;
+
+}
+.Form button:nth-child(1){
+    z-index: 4;
+    position:absolute;
+    left: 2%;
+    background-color: rgb(30,178,224);
+    color: white;
+    border: 2px solid rgb(195, 194, 194);
+    padding: .6rem 1.4rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+    top: 2vh;
+}
+.button{
+    border: 2px solid rgb(177, 176, 176);
+    color: white;
+    font-weight: 600;
+    background-color: rgb(30,178,224);
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    /* left: 13%; */
+    width: 40%;
+    position: relative;
+    left: 27%;
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+}
+
+.buttons{
+    display: flex;
+    position:relative;
+    margin: 1rem;
+    flex-direction: row;
+    justify-content: center;
+}
+.buttons button:nth-child(1){
+    background-color: rgb(193, 193, 190);
+    border: 2px solid rgb(177, 176, 176);
+    color: white;
+    padding: .6rem 3rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 2rem;
+    top: 0vh;
+}
+.buttons button:nth-child(2){
+    background-color: rgb(41, 247, 14);
+    border: 2px solid rgb(177, 176, 176);
+    color: white;
+    padding: .6rem 3rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    top: 0vh;
+}
+.genres{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    opacity: 75%;
+    color: white;
+}
+
+.form2{
+    background: linear-gradient(
+        80deg,
+        rgba(34,56,54,80%) 100%,
+        rgba(15, 47, 44, 0.7) 50%
+    );
+    border-radius: .3rem;
+    margin: 1rem;
+}
+.form2 h2{
+    width: 92.6%;
+}
+.off{
+    color: white;
+    font-weight: 600;
+    padding: .6rem 1rem;
+    border-radius: .4rem;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    /* left: 13%; */
+    width: 40%;
+    position: relative;
+    left: 27%;
+    margin: 1rem;
+    justify-content: center;
+    display: flex;
+    background-color: grey;
+}

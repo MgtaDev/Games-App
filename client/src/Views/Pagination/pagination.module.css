@@ -1,0 +1,43 @@
+.Pagination{
+justify-content: center;
+position: relative;
+margin-left: 10%;
+margin-top: -1rem;
+}
+.headerPagination{
+    color: white;
+    margin: 1rem 6.2rem;
+    opacity: 70%;
+    position:relative;
+}
+
+.pageButtons{
+justify-content: center;
+display: flex;
+margin: 1.5rem;
+color: white;
+position: relative;
+}
+.pageButtons button{
+    padding: .4rem .8rem;
+    margin: .3rem;
+    /* color: white; */
+    background-color: rgb(13, 13, 13);;
+    border-radius: .4rem;
+    cursor: pointer;
+}
+.pageButtons button:active{
+    transition: 0.3s;
+    transform: scale(0.60);
+}
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.selected {
+    color: rgba(249, 31, 7, 0.9);
+}
+.unselected {
+    color: white
+}

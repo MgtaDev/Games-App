@@ -1,0 +1,40 @@
+
+.searchBar{
+margin: 1rem;
+position: relative;
+/* left: -1.2rem; */
+}
+.searchBar input{
+    color: white;
+    border-radius: .3rem;
+    padding: .9rem 1rem;
+    width: 64vw;
+    margin: 0;
+    position: relative;
+    top: -5%; 
+    /* width: 100%; */
+    text-indent: 0rem;
+    /* margin-right: 1rem; */
+    background-color:rgb(26, 26, 30);
+    border: none;
+}
+.searchBar input:active{
+    background-color:rgb(26, 26, 30);
+
+}
+
+.searchBar button{
+    border-radius: 1rem;
+    padding: .05rem .3rem;
+    position: relative;
+    right: 4%;
+    background-color:rgb(26, 26, 30);
+    color: white;
+    border: none;
+    z-index: 3;
+    cursor: pointer;
+}
+.searchBar button:active{
+    /* background-color:rgb(26, 26, 30); */
+
+}

@@ -1,0 +1,16 @@
+  .ButtonsContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin:18.2%;
+    display: inline;
+  }
+  .ButtonsContainer select{
+    margin: 1rem;
+    padding: .5rem .4rem ;
+    width: 12%;
+    border-radius: .3rem;
+    background-color: rgb(11, 11, 11);;
+    color: white;
+    cursor: pointer;
+  }

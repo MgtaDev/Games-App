@@ -1,0 +1,29 @@
+.Loading{
+    background: linear-gradient(
+        80deg,
+        rgba(36, 36, 36, 0.791) 35%,
+        rgba(19, 8, 48, 0.7) 100%
+    );;
+}
+
+.loadingCard{
+    justify-content: center;
+    display: flex;
+}
+.loadingCard img{
+    width: 500px;
+    position: relative;
+    left: 0;
+    margin-top: -.1rem
+}
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: -2rem;
+    font-family: 'Bungee', cursive;;
+    color: white;
+    /* margin-bottom: 7.8rem; */
+    padding-bottom: 16.1%;
+    margin-bottom: -3rem;
+  }

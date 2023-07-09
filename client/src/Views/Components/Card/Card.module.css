@@ -1,0 +1,114 @@
+.card{
+    background-color: rgb(31, 30, 30);
+    border-radius: .7rem;
+    margin: 1.5rem;
+    width: 304px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 8px 10px 20px rgb(28, 28, 28);
+    margin-bottom: 2rem;
+}
+
+.card:hover{
+transform: scale(1.05);
+transition: .5s;
+box-shadow: 0px 2px 20px rgba(250, 42, 15, 0.5);
+}
+.card h4{
+    margin: 1rem;
+    /* float: left; */
+    margin: 1rem;
+    color: #f3f4f5;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+.card img{
+    margin: .5rem;
+    width: 303px;
+    height: 210px;
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+    position: relative;
+    top: -.35em; 
+    left: -.46rem;
+}
+.card svg{
+    position: relative;
+    /* rotate:180deg; */
+    margin-top: -4rem;
+    margin-bottom: -.7rem;
+}
+.cardTop{
+    border-radius: .5rem;
+}
+.cardContent{
+margin-top: -.5rem;
+}
+.cardContent h6{
+    margin: .3rem;
+    text-transform: capitalize;
+    z-index: 2;
+    color: rgb(102, 101, 101);
+    float: left;
+    margin: .8rem;
+    margin-right: 1.5rem;
+}
+
+
+.cardContent p{
+    margin: .5rem;
+}
+.id{
+    opacity: 50%;
+    display: none;
+}
+.cardContent button{
+    background-color: rgba(250, 42, 15, 0.9);
+    border: none;
+    color: white;
+    /* border-top: solid .2rem #e2e3e3;; */
+    padding: .4rem 1rem;
+    border-radius:  .3rem;
+    font-weight: 600;
+    margin: .8rem;
+    cursor: pointer;
+}
+.cardContent button:hover{
+    background-color: white;
+    color: rgba(250, 42, 15, 0.9);
+    transition: .5s;
+}
+.cardContent button:active{
+    transform: scale(.7);
+    transition: .3s;
+}
+.cardStats{
+    display: flex;
+    justify-content: center;
+}
+.cardStats p{
+    margin: 1.2rem;
+    font-size: small;
+    position: relative;
+    left: 4%;
+}
+.cardStats p:first-of-type{
+    position: relative;
+    left: -8.5%;
+}
+.cardStats span{
+    font-size: normal;
+    margin-top: -.7rem;
+    color: black;
+
+}
+.cardStats span:nth-child(1){
+position: relative;
+left: 15%;
+}
+.cardStats span:last-of-type{
+    position: relative;
+    right: 15%;
+
+}
