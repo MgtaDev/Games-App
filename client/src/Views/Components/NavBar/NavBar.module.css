@@ -1,7 +1,7 @@
 .topBar{
     display: flex;
     justify-content: space-around;
-    background-color: rgb(19, 19, 19);;
+    background-color: rgb(10, 10, 10);
     position: fixed;
     padding: .6rem;
     z-index: 100;
@@ -12,7 +12,7 @@
   margin: -1rem;
   padding: 0;
   position: relative;
-  left: 13%;
+  left: -3%;
   top: 5%;
 }
 .topBar a img:hover{
@@ -37,8 +37,8 @@ text-decoration: none;
 }
 .navB{
     background:linear-gradient(
-      88deg,
-      rgba(21, 21, 21, 0.82)50%,
+      90deg,
+      rgba(55, 54, 54, 0.82)40%,
       rgb(142, 15, 1) 100%
   );;
     font-size: 18px;
@@ -51,9 +51,9 @@ text-decoration: none;
 }
 .navB2{
   background:linear-gradient(
-    80deg,
+    82deg,
     rgb(142, 15, 1) 0%,
-    rgba(21, 21, 21, 0.82) 60%
+    rgba(55, 54, 54, 0.82) 70%
 );;
   border: none;
   font-size: 18px;
@@ -81,26 +81,37 @@ text-decoration: none;
   position: fixed; 
   top: 0;
   left: 0;
-  width: 120px; 
+  width: 100px; 
   height: 100%; 
-  background-color: rgb(19, 19, 19);
+  background-color: rgb(10, 10, 10);
   overflow-y: scroll; 
   font-size: 18px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .header{
   position: relative;
   justify-content: center;
   position: relative;
-  /* left: 20%; */
   text-align: center;
+}
+.topNav{
+  margin-bottom: -90%;
+  color: white;
+}
+.topNav p:hover{
+color: red;
+transform: scale(1.18);
+cursor: pointer;
+transition: .5s;
 }
 
 .sidebar ul {
   list-style: none; 
   margin-top: 6rem;
   padding: 0;
+  float: left;
 }
 
 .sidebar li {

@@ -1,19 +1,24 @@
 .card{
-    background-color: rgb(31, 30, 30);
+    background-color: rgb(5, 5, 5);
     border-radius: .7rem;
     margin: 1.5rem;
     width: 304px;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    box-shadow: 8px 10px 20px rgb(28, 28, 28);
     margin-bottom: 2rem;
+    color: rgba(177, 177, 177, 0.795);
 }
 
+.hover{
+    filter: blur(4px);
+}
 .card:hover{
+background-color:rgb(47, 48, 48) ;
 transform: scale(1.05);
 transition: .5s;
-box-shadow: 0px 2px 20px rgba(250, 42, 15, 0.5);
+box-shadow: 0px 2px 20px rgba(235, 233, 230, 0.5);
+color: white;
 }
 .card h4{
     margin: 1rem;
@@ -49,7 +54,6 @@ margin-top: -.5rem;
     margin: .3rem;
     text-transform: capitalize;
     z-index: 2;
-    color: rgb(102, 101, 101);
     float: left;
     margin: .8rem;
     margin-right: 1.5rem;
@@ -100,7 +104,6 @@ margin-top: -.5rem;
 .cardStats span{
     font-size: normal;
     margin-top: -.7rem;
-    color: black;
 
 }
 .cardStats span:nth-child(1){

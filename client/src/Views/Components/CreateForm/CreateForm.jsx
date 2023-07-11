@@ -2,7 +2,7 @@ import style from './CreateForm.module.css';
 import validate from './Validate';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { getGenres } from '../../../Redux/Actions';
 
 const CreateForm = () => {
@@ -26,7 +26,7 @@ const CreateForm = () => {
     release: '',
     ratings: '',
     description: '',
-    platforms: [''],
+    platforms: '',
     genres: [],
   });
 
@@ -83,10 +83,10 @@ const CreateForm = () => {
       release: formData.release,
       ratings: formData.ratings,
       description: formData.description,
-      platforms: formData.platforms,
+      platforms: [formData.platforms],
       genres: formData.genres
     }
-    fetch('http://localhost:3001/gamesdb', {
+    fetch('http://localhost:3001/games', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -95,13 +95,15 @@ const CreateForm = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Game created successfully:', data);
-        navigate('/home');
+        console.log('Game created successfully', data);
+        window.alert('Game created successfully');
+        // navigate('/home');
       })
       .catch((error) => {
         console.error('Error creating game:', error);
         console.log('Fetch error:', error.message);
       });
+      navigate('/home')
   };
 
   const handlePrevious = () => {
@@ -112,13 +114,13 @@ const CreateForm = () => {
     setStep((prevStep) => prevStep + 1);
   };
 
-  const navigateHome = () => {
-    navigate('/home');
-  };
+ 
 
   return (
     <div className={style.Form}>
-      <button onClick={navigateHome}>Back</button>
+      <NavLink to={'/home'}>
+      <button>Back</button>
+      </NavLink>
 
       {step === 0 && (
         <form onSubmit={handleSubmit}>

@@ -14,7 +14,7 @@ const getGamesByName = async (req, res) => {
       platforms: game.platforms.map((platform)=> platform.platform.name),
       description: game.description_raw,
       release: game.released,
-      ratings: game.ratings.id,
+      ratings: game.ratings.length ? game.ratings[0].id : null,
       genres: game.genres.map(genre => genre.name),
     }));
 

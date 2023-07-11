@@ -2,7 +2,7 @@ import style from './Home.module.css'
 // import ButtonsContainer from '../Components/ButtonsContainer/ButtonsContainer.jsx'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addGames, addGamesDb } from '../../Redux/Actions'
+import { addGames } from '../../Redux/Actions'
 import Pagination  from "../Pagination/pagination";
 import Loading2 from '../Loading 2/Loading2'
 import NavBar from '../Components/NavBar/NavBar'
@@ -13,7 +13,6 @@ const Home = () => {
     const games = useSelector((state) => state.games)
     
     useEffect(()=>{
-        dispatch(addGamesDb())
         dispatch(addGames())
     }, [dispatch])
     

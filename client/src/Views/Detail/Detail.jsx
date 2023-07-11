@@ -22,21 +22,25 @@ const Detail = () => {
   }
 console.log(game)
   
-  useEffect(() => {
-      axios(`http://localhost:3001/games/${id}`)
-     .then((response) => response.data)
-     .then((data) => {
-       if (data.id) {
-         setGame(data);
-         setTimeout(() => setShowDetails(true), 50); // Ajusta el tiempo aquí
-       } else {
-         window.alert("No existe ese juego.");
-       }
-     })
-     .catch((err) => {
-       window.alert("No hay juego con ese nombre.");
-     });
- }, [id]); 
+useEffect(() => {
+  axios(`http://localhost:3001/games/${id}`)
+    .then((response) => {
+      console.log('API Response:', response)
+      return response.data
+    })
+    .then((data) => {
+      if (data.id) {
+        setGame(data);
+        setTimeout(() => setShowDetails(true), 50); // ajusta el tiempo aquí
+      } else {
+        window.alert("No existe ese juego.");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      window.alert("Hubo un error al obtener los detalles del juego.");
+    });
+}, [id]);
 
   const renderStars = (num) => {
   let stars = '';

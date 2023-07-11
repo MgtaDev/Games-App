@@ -1,9 +1,9 @@
 .Home{
     background: linear-gradient(
         80deg,
-        rgba(21, 21, 21, 0.82) 10%,
-        rgba(44, 5, 1, 0.5) 100%
-    );
+        rgba(19, 19, 19, 0.973) 35%,
+        rgba(5, 17, 29, 0.967) 100%
+    );;
     padding-bottom: 5rem;
 }
 

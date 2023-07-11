@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import style from './NavBar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGenres, filterGamesByGenre, addGames } from '../../../Redux/Actions';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const NavBar2 = () => {
   const genres = useSelector((state) => state.genres);
-
-  // eslint-disable-next-line no-unused-vars
-  const [showGenres, setShowGenres] = useState(true);
-  // eslint-disable-next-line no-unused-vars
-  const [showPlatforms, setShowPlatforms] = useState(true);
-
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     let genres = [];
@@ -26,10 +21,11 @@ const NavBar2 = () => {
       })
       .catch((err) => console.error(err));
   }, [dispatch]);
+
   const handleTypesChange = (event) => {
     try {
       const genreToFilter = event.target.textContent;
-      console.log(genreToFilter)
+      console.log(genreToFilter);
       dispatch(filterGamesByGenre(genreToFilter));
       console.log('Games per genre fetched successfully');
     } catch (error) {
@@ -37,28 +33,35 @@ const NavBar2 = () => {
     }
   };
 
-  const navigate = useNavigate()
-const goHome = ()=>{
-  navigate('/home')
-}
+  const reloadGames = async () => {
+    dispatch(addGames());
+  };
 
-console.log(genres)
+  const goHome = () => {
+    navigate('/home');
+  };
+
+
   return (
     <nav className={style.sidebar}>
-      <ul>
-      <li onClick={goHome} className={style.header}>Home</li>
-      <li onClick={addGames} className={style.header}>Reload</li>
-      <li className={style.header}>Genres</li>
-        {showGenres ? (
-          genres.map((genre) => (
-            <li className={style.genres} key={genre} onClick={handleTypesChange} value={genre}>
-              {genre}
+      {genres.length > 1 ? (
+        <div className={style.topNav}>
+          <p onClick={goHome} className={style.header}>
+            Home
+          </p>
+          <p onClick={reloadGames} className={style.header}>
+            Reload
+          </p>
+          <p className={style.header}>Genres</p>
+        </div>
+      ) : null}
+      <ul className={style.ul}>
+        {genres &&
+          genres.map((genre, index) => (
+            <li className={style.genres} key={index} onClick={handleTypesChange} value={genre.name}>
+              {genre.name}
             </li>
-          ))
-        ) : (
-          ''
-        )}
-       
+          ))}
       </ul>
     </nav>
   );

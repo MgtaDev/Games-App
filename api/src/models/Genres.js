@@ -13,9 +13,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       unique: true
     },
-    games: {
-      type: Sequelize.ARRAY(Sequelize.JSON)
-    }
+   
   },{timestamps: false}) 
   return Genres
 }

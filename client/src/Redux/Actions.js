@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ADD_GAMES, ADD_GAMES_DB, FILTER_BY_HIGH_RATE, FILTER_BY_MIN_RATE, FILTER_GAMES_BY_GENRE, GET_GAMES_PER_NAME, GET_GENRES, SET_GENRES_RENDER, SET_ORDER_A_Z, SET_ORDER_Z_A, SHOW_ALL_GAMES, SHOW_API_GAMES, SHOW_DB_GAMES } from "./Types"
+import { ADD_GAMES, ADD_GAMES_DB, FILTER_BY_HIGH_RATE, FILTER_BY_MIN_RATE, FILTER_GAMES_BY_GENRE, GET_GAMES_PER_NAME, GET_GENRES, SET_GENRES_RENDER, SET_ORDER_A_Z, SET_ORDER_Z_A, SHOW_ALL_GAMES,  } from "./Types"
 import { getGameDetails } from "./api"
 
 export const addGames = ()=> {
@@ -61,18 +61,6 @@ export const addGames = ()=> {
   })
   //
 
-  //Origen
-  export const filterGamesFromApi = (payload) => ({
-    type:SHOW_API_GAMES,
-    payload
-  });
-
-  export const filterGamesFromDb = (payload) => ({
-    type: SHOW_DB_GAMES,
-    payload
-  });
-  //
-
  
 export const getGenres = (payload) => ({
   type:GET_GENRES,
@@ -118,7 +106,6 @@ export const getGameForSearchBar = (name) => {
       console.log(response)
     } catch (error) {
       console.error(error);
-      window.alert('Error buscando juegos.');
     }
   };
 };
@@ -126,5 +113,10 @@ export const getGameForSearchBar = (name) => {
 export const filterGamesByGenre = (genre) => ({
   type: FILTER_GAMES_BY_GENRE,
   payload: genre 
+});
+
+export const reloadGames = () => ({
+  type: FILTER_GAMES_BY_GENRE,
+  payload: {}
 });
 

@@ -8,7 +8,7 @@ import ButtonsContainer from "../Components/ButtonsContainer/ButtonsContainer";
 
 const Pagination = () => {
   const dispatch = useDispatch()
-  
+
   useEffect(()=>{
       dispatch(addGames())
   }, [dispatch])
