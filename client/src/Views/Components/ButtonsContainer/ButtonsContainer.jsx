@@ -1,6 +1,6 @@
 import styles from './ButtonsContainer.module.css'
 import { useDispatch } from 'react-redux';
-import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGamesDb  } from '../../../Redux/Actions'
+import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGamesDb, addGamesApi  } from '../../../Redux/Actions'
 
   const ButtonsContainer = () => {
   const dispatch = useDispatch();
@@ -26,9 +26,13 @@ import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGam
           dispatch(addGames())
           break;
     
+      case 'api' :
+          dispatch(addGamesApi())
+          break;
+
       case 'db' :
-        dispatch(addGamesDb())
-        break;
+           dispatch(addGamesDb())
+          break;
         
       default:
         break
@@ -51,6 +55,7 @@ import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGam
       <select value="origen" name="origen" id="origen" onChange={handleFiltrosChange}>
       <option value="">Origen</option>
       <option value="all">All</option>
+      <option value="api">Api</option>
       <option value="db">Created</option>
       </select>
     </div>

@@ -1,9 +1,11 @@
 import style from './Card.module.css'
 import {Link} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { deleteGame } from '../../../Redux/Actions'
 
 
 const Card = ({id, img, name, genres, release, ratings}) => {
-
+  const dispatch = useDispatch()
     const renderStars = (num) => {
         let stars = '';
         for(let i = 0; i < num; i++) {
@@ -11,13 +13,21 @@ const Card = ({id, img, name, genres, release, ratings}) => {
         }
         return <h6 style={{color:'yellow'}}>{stars}</h6>;
       }
-
    const genresJoined = genres ? genres.join(' / ') : ''
-      
+   const handleDelete = () => {
+    dispatch(deleteGame(id))
+  };
+
+  const containsLetters = /[a-zA-Z]/.test(id);
     return(
     <div className={style.card}>
 
     <div className={style.cardTop}>
+    {containsLetters ? (
+          <button className={style.delete} onClick={handleDelete}>X</button>
+        ) : (
+          ''
+        )}
     <img src={img} alt='pic' />
     <h4>{name}</h4>
     </div>

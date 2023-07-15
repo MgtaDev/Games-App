@@ -12,16 +12,9 @@ const getGenres = async (req, res) => {
     for (let genre of genres) {
       // Crea el género en la base de datos
       const [newGenre, created] = await Genre.findOrCreate({
-        where: { name: genre.name },
-        defaults: {
-          games: genre.games.map((game)=>{
-            return{
-              id:game.id,
-              name:game.name,
-            }
+        where: { name: genre.name}
           })
-        },
-      });
+        
       
       // Agrega el género creado al arreglo que se enviará en la respuesta
       ourGenres.push(newGenre.toJSON());

@@ -2,9 +2,10 @@
     background: linear-gradient(
         80deg,
         rgba(19, 19, 19, 0.973) 35%,
-        rgba(5, 17, 29, 0.967) 100%
+        rgba(5, 17, 29, 0.634) 100%
     );;
     padding-bottom: 5rem;
+
 }
 
 .Home img{
@@ -19,3 +20,7 @@
     justify-content: center;
 
 }
+.Home.bg-black {
+    background-color: #000 !important;
+    color: #fff !important;
+  }

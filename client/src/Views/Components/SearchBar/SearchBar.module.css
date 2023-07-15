@@ -20,7 +20,6 @@ left: -1.2rem;
 }
 .searchBar input:active{
     background-color:rgb(26, 26, 30);
-
 }
 
 .searchBar button{
@@ -28,13 +27,32 @@ left: -1.2rem;
     padding: .05rem .3rem;
     position: relative;
     right: 4%;
-    background-color:rgb(26, 26, 30);
+    background: transparent;
     color: white;
     border: none;
     z-index: 3;
     cursor: pointer;
 }
-.searchBar button:active{
-    /* background-color:rgb(26, 26, 30); */
 
+@media (max-width:1150px) {
+    .searchBar input{
+        width: 200%;
+    }
+    .searchBar button{
+    position: relative;
+    top: -55%; 
+    left: 90%;
+    float: right;   
+    }
+}
+@media (max-width:768px){
+    .searchBar input{
+        width: 150%;
+    }
+    .searchBar button{
+        position: relative;
+        top: -55%; 
+        left: 40%;
+        float: right;  
+    }
 }

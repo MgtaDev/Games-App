@@ -39,7 +39,7 @@ text-decoration: none;
     background:linear-gradient(
       90deg,
       rgba(55, 54, 54, 0.82)40%,
-      rgb(142, 15, 1) 100%
+      #ff0000a2 100%
   );;
     font-size: 18px;
     padding: .8rem 1.5rem;
@@ -52,7 +52,7 @@ text-decoration: none;
 .navB2{
   background:linear-gradient(
     82deg,
-    rgb(142, 15, 1) 0%,
+    #ff0000a2  0%,
     rgba(55, 54, 54, 0.82) 70%
 );;
   border: none;
@@ -81,7 +81,7 @@ text-decoration: none;
   position: fixed; 
   top: 0;
   left: 0;
-  width: 100px; 
+  width: 120px; 
   height: 100%; 
   background-color: rgb(10, 10, 10);
   overflow-y: scroll; 
@@ -89,6 +89,7 @@ text-decoration: none;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  /* margin-top: 8%; */
 }
 .header{
   position: relative;
@@ -97,21 +98,21 @@ text-decoration: none;
   text-align: center;
 }
 .topNav{
-  margin-bottom: -90%;
+  position: relative;
+  top: 5%;
   color: white;
 }
 .topNav p:hover{
 color: red;
-transform: scale(1.18);
 cursor: pointer;
 transition: .5s;
 }
 
 .sidebar ul {
   list-style: none; 
-  margin-top: 6rem;
   padding: 0;
   float: left;
+  margin-bottom: -15rem;
 }
 
 .sidebar li {
@@ -120,7 +121,6 @@ transition: .5s;
   cursor: pointer;
 }
 .sidebar li:hover{
-  transform: scale(1.18);
   transition: .5s;
   color:rgba(250, 42, 15, 0.9)
 }
@@ -136,4 +136,59 @@ transition: .5s;
   font-size: 14px;
   opacity: 70%;position: relative;
 text-align: center;
+}
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff0000a2; /* Color de fondo de la thumb */
+  border-radius: 6px; /* Radio de bordes de la thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #5e5959; /* Color de fondo de la scrollbar */
+}
+
+/* Cambiar el color de la scrollbar */
+::-webkit-scrollbar {
+  scrollbar-color: #999 #e80404;
+}
+
+
+
+
+
+
+
+@media (max-width:1150px) {
+  .navButtons{
+    margin-left: 20%;
+  }
+}
+@media (max-width: 820px){
+  .sidebar ul{
+    margin-bottom: 13rem;
+  }
+}
+@media (max-width:768px) {
+  .navButtons{
+    margin-left: 10%;
+  }
+  .navButtons a{
+    margin: .5rem;
+  }
+}
+@media (max-width:650px) {
+  .navButtons{
+    margin-left: 15%;
+  }
+  .navB{
+    font-size: 15px;
+    width: 35%;
+  }
+  .navB2{
+    width: 35%;
+    font-size: 15px;
+  }
 }

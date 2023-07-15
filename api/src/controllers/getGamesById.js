@@ -1,5 +1,5 @@
 const axios = require('axios');
-const {VideoGame} = require('../db');
+const {Videogame} = require('../db');
 
 const getGameById = async(req, res)=>{
   const { id } = req.params;
@@ -7,7 +7,7 @@ const getGameById = async(req, res)=>{
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   if (uuidRegex.test(id)) {
      try {
-      const gameDb = await VideoGame.findOne({ where: { id } });
+      const gameDb = await Videogame.findOne({ where: { id } });
       if (!gameDb) {
         return res.status(404).json({ message: 'Este juego no existe en la base de datos' });
       }
@@ -40,3 +40,5 @@ const getGameById = async(req, res)=>{
     }
   }
 module.exports = getGameById;
+
+

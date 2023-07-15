@@ -6,7 +6,7 @@
     /* flex-wrap: wrap; */
 }
 .aboutMe img{
-    height: 100vh;
+    height: 97.8vh;
     /* width: 50%; */
 }
 .aboutMe button{
@@ -48,7 +48,7 @@ span{
 }
 .nav ul{
     display: flex;
-    gap: 6rem;
+    gap: 7rem;
     list-style: none;
 }
 .nav li{

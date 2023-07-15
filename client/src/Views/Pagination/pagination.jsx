@@ -139,7 +139,7 @@ const pageNumbers = generatePageNumbers();
 
         </div>
         
- </div>
+        </div>
     )
 }
 export default Pagination;

@@ -34,7 +34,8 @@ module.exports = (sequelize) => {
     genres: {
       type: DataTypes.ARRAY(DataTypes.STRING),
       allowNull: false
-    }
+    },
+    
   }, {
     timestamps: false
   });

@@ -7,7 +7,12 @@ import NavBar2 from '../Components/NavBar/NavBar2';
 import PlayStation from '../assets/logotipo-de-playstation.png'
 import Xbox from '../assets/logotipo-de-xbox.png'
 import Steam from '../assets/logotipo-de-steam.png'
+import Linux from '../assets/Linux logo.png'
+import Apple from '../assets/Apple logotipo.png'
+import Nintendo from '../assets/Nintendo logotipo.png'
+import Web from '../assets/computadora.png'
 import Loading2 from '../Loading 2/Loading2';
+import swal from 'sweetalert';
 
 
 
@@ -33,12 +38,13 @@ useEffect(() => {
         setGame(data);
         setTimeout(() => setShowDetails(true), 50); // ajusta el tiempo aquí
       } else {
-        window.alert("No existe ese juego.");
+        swal('ERROR' ,'This game doesn exist!', 'error');
       }
     })
     .catch((err) => {
       console.error(err);
-      window.alert("Hubo un error al obtener los detalles del juego.");
+      swal('ERROR' ,'Error loading game details', 'error');
+
     });
 }, [id]);
 
@@ -62,6 +68,7 @@ useEffect(() => {
           case 'PlayStation 5':
           case 'PlayStation 4':
           case 'PlayStation 3':
+          case 'PS Vita':
             if (!renderedPlatforms.includes('PlayStation')) { // Verifica si la plataforma PlayStation ya se renderizó anteriormente
               icons.push(<img key="PlayStation" className={style.filtericon} style={{ width: '50px' }} src={PlayStation} alt="PlayStation" />);
               renderedPlatforms.push('PlayStation');
@@ -81,7 +88,39 @@ useEffect(() => {
               renderedPlatforms.push('PC');
             }
             break;
-          default:
+          
+            case 'Web':
+              if (!renderedPlatforms.includes('Web')) { // Verifica si la plataforma PC ya se renderizó anteriormente
+                icons.push(<img key="Web" className={style.filtericon} style={{ width: '50px' }} src={Web} alt="Web" />);
+                renderedPlatforms.push('Web');
+              }
+              break;
+            
+            case 'Nintendo Switch':
+              case 'Nintendo 3DS':
+                case 'Wii U':
+              if (!renderedPlatforms.includes('Nintendo') || !renderedPlatforms.includes('Wii' ||  !renderedPlatforms.includes('Nintendo 3DS'))) { // Verifica si la plataforma PC ya se renderizó anteriormente
+                icons.push(<img key="Nintendo" className={style.filtericon} style={{ width: '50px' }} src={Nintendo} alt="Nintendo" />);
+                renderedPlatforms.push('Nintendo');
+              }
+              break;
+            
+            case 'macOS':
+              case 'iOS':
+              if (!renderedPlatforms.includes('macOS') || !renderedPlatforms.includes('iOS')) { // Verifica si la plataforma PC ya se renderizó anteriormente
+                icons.push(<img key="Apple" className={style.filtericon} style={{ width: '50px' }} src={Apple} alt="Apple" />);
+                renderedPlatforms.push('Apple');
+              }
+              break;
+
+              case 'Linux':
+                if (!renderedPlatforms.includes('Linux')) { // Verifica si la plataforma PC ya se renderizó anteriormente
+                  icons.push(<img key="Linux" className={style.filtericon} style={{ width: '50px' }} src={Linux} alt="Linux" />);
+                  renderedPlatforms.push('Linux');
+                }
+                break;
+
+            default:
             break;
         }
       }
@@ -98,14 +137,29 @@ useEffect(() => {
           case 'PlayStation 5':
           case 'PlayStation 4':
           case 'PlayStation 3':
+          case 'PS Vita':
               return <><img className={style.filtericon} style={{ width: '50px' }} src={PlayStation} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></> ;
           case 'Xbox Series S/X':
           case 'Xbox One':
           case 'Xbox 360':
               return<><img className={style.filtericon} style={{ width: '50px' }} src={Xbox} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
           case 'PC':
-              return <><img className={style.filtericon} style={{ width: '50px' }} src={Steam} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-          default:
+            return <><img className={style.filtericon} style={{ width: '50px' }} src={Steam} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
+          case 'Linux':
+            return <><img className={style.filtericon} style={{ width: '50px' }} src={Linux} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
+          case 'iOS':
+          case 'macOS':
+            return <><img className={style.filtericon} style={{ width: '50px' }} src={Apple} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
+
+          case 'Nintendo Switch':
+          case 'Wii U':
+          case 'Nintendo 3DS':
+            return <><img className={style.filtericon} style={{ width: '50px' }} src={Nintendo} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
+
+          case 'Web':
+            return <><img className={style.filtericon} style={{ width: '50px' }} src={Web} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
+            
+              default:
               break;
       }
 
@@ -132,7 +186,7 @@ useEffect(() => {
                 <h3>{game?.name}</h3>
                 <h4 className={style.header}>Genres: </h4>
                 <p >{genresJoined}</p>
-                <h4 className={style.header}>Realease date: <p>{game.releaseDate}</p></h4>
+                <h4 className={style.header}>Realease date: <p>{game.release}</p></h4>
                 <h4 className={style.header}>Platforms:  <p className={style.platforms}>{renderIcons(game.platforms)}</p></h4>
 
                 <h4 className={style.header}>Ratings: {renderStars(game.ratings)}</h4>

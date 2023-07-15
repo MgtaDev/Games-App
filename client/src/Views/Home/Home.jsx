@@ -15,7 +15,6 @@ const Home = () => {
     useEffect(()=>{
         dispatch(addGames())
     }, [dispatch])
-    
 
     return(
         <div className={style.Home}>

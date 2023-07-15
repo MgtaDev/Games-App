@@ -10,14 +10,19 @@ const SearchBar = () => {
   const handleInputChange = (event) => {
     const searchValue = event.target.value.toLowerCase();
     setGameSearched(searchValue);
-    dispatchSearchFunction(searchValue);
+    // dispatchSearchFunction(searchValue);
   };
 
   const dispatchSearchFunction = (searchValue) => {
     const name = searchValue.trim();
     dispatch(getGameForSearchBar(name));
   };
-
+  const handleInputKeyDown = (event) => {
+    if (event.key === "Enter") {
+      dispatchSearchFunction(gameSearched);
+    }
+  };
+  
   return (
     <div className={style.searchBar}>
       <input
@@ -26,8 +31,9 @@ const SearchBar = () => {
         name="search"
         placeholder="Search your game"
         value={gameSearched}
+        onKeyDown={handleInputKeyDown}
       />
-      <button onClick={() => dispatchSearchFunction(gameSearched)}>
+      <button  onClick={() => dispatchSearchFunction(gameSearched)}>
         <span>🔍</span>
       </button>
     </div>

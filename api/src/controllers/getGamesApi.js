@@ -1,12 +1,7 @@
 const axios = require('axios');
-const { Videogame, Type } = require('../db.js')
-
 const getGames = async (req, res) => {
   try {
     let ourGames = [];
-    const gamesDb = await Videogame.findAll({
-      include: Type
-    }); // esperamos a que se resuelva la promesa de findAll()
 
     for (let page = 1; page <= 2; page++) {
       const url = `https://api.rawg.io/api/games?key=bfd3e1995b9c42718220bbd425e2fdaf&page=${page}&page_size=40`;
@@ -26,23 +21,7 @@ const getGames = async (req, res) => {
 
       ourGames = [...ourGames, ...modifiedGames];
     }
-
     let allGames = [...ourGames];
-
-    if (gamesDb.length > 0) {
-      const modifiedGamesDb = gamesDb.map((game) => ({
-        id: game.id,
-        name: game.name,
-        image: game.image,
-        platforms: game.platforms,
-        description: game.description,
-        release: game.release,
-        ratings: game.ratings,
-        genres: game.genres
-      }));
-
-      allGames = [...ourGames, ...modifiedGamesDb];
-    }
 
     return res.status(200).json(allGames);
   } catch (error) {

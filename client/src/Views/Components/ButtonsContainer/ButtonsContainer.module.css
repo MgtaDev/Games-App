@@ -16,3 +16,29 @@
     color: white;
     cursor: pointer;
   }
+
+  @media (max-width:950px){
+    .ButtonsContainer select{
+      width: 16%;
+      margin: .5rem;
+  }
+}
+@media (max-width:950px) {
+  .ButtonsContainer{
+    position: relative;
+    left:-10% ;
+  }
+}
+@media (max-width:735px) {
+  @media (max-width:950px) {
+    .ButtonsContainer{
+      position: relative;
+      /* left:-5% ; */
+      margin-left:  3rem
+    }
+    .ButtonsContainer select{
+      width: 15%;
+      margin: .5rem;
+  }
+}
+}

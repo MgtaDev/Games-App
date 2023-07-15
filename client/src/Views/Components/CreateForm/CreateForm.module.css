@@ -122,6 +122,7 @@
     position: relative;
     top: 0vh;
 }
+
 .genres{
     display: flex;
     flex-direction: row;

@@ -1,5 +1,5 @@
 // Importamos nuestros types para usarlos en el reducer
-import {GET_GAMES_PER_NAME ,SET_GENRES_RENDER,SET_ORDER_A_Z,SET_ORDER_Z_A, GET_GENRES,FILTER_BY_HIGH_RATE,FILTER_BY_MIN_RATE,ADD_GAMES, FILTER_GAMES_BY_GENRE, ADD_GAMES_DB, RELOAD_GAMES} from './Types'
+import {GET_GAMES_PER_NAME ,SET_GENRES_RENDER,SET_ORDER_A_Z,SET_ORDER_Z_A, GET_GENRES,FILTER_BY_HIGH_RATE,FILTER_BY_MIN_RATE,ADD_GAMES, FILTER_GAMES_BY_GENRE, ADD_GAMES_DB, RELOAD_GAMES, ADD_GAMES_API, DELETE_GAME} from './Types'
 
 //Estado inicial de nuestro reducer
 const initialstate = {
@@ -57,17 +57,26 @@ switch (action.type) {
             ...state,
             games: action.payload
         }
-
-
+    case ADD_GAMES_API:
+        return{
+            ...state,
+            games: action.payload
+        }
     case FILTER_GAMES_BY_GENRE:
     const  genre  = action.payload;
     const filteredGames = state.games.filter(game => game.genres.includes(genre));
- 
     return{
         ...state,
         games: filteredGames
     }
 
+    case DELETE_GAME:
+        const filGames = state.games.filter(game => game.id !== action.payload);
+        return {
+          ...state,
+          games: filGames
+        };
+ 
     case RELOAD_GAMES:
         return{
             ...state,

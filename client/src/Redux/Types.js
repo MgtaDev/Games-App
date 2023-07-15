@@ -1,7 +1,8 @@
 // Aqui ponemos nuestros types definidos en costantes para evitar
 //errores de tipeo
- export const ADD_GAMES= 'ADD_GAMES'
- export const ADD_GAMES_DB= 'ADD_GAMES_DB'
+export const ADD_GAMES= 'ADD_GAMES'
+export const ADD_GAMES_API= 'ADD_GAMES_API'
+export const ADD_GAMES_DB= 'ADD_GAMES_DB'
 export const GET_GAME_BY_ID = 'GET_GAME_BY_ID'
  export const SET_ORDER_A_Z = 'SET_ORDER_A_Z'
  export const SET_ORDER_Z_A = 'SET_ORDER_Z_A'
@@ -16,3 +17,4 @@ export const GET_GAME_BY_ID = 'GET_GAME_BY_ID'
  export const CREATE_POKEMON = 'CREATE_POKEMON'
  export const FILTER_GAMES_BY_GENRE = 'FILTER_GAMES_BY_GENRE'
  export const RELOAD_GAMES = "RELOAD_GAMES"
+ export const DELETE_GAME = "DELETE_GAME" 

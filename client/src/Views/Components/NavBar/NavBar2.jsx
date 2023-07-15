@@ -10,14 +10,10 @@ const NavBar2 = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let genres = [];
     fetch('http://localhost:3001/genres')
       .then((response) => response.json())
       .then((response) => {
-        response.forEach((genre) => {
-          genres.push(genre.name);
-        });
-        dispatch(getGenres(genres));
+        dispatch(getGenres(response)); // Actualiza el estado local `genres` con los géneros y sus respectivos IDs
       })
       .catch((err) => console.error(err));
   }, [dispatch]);
@@ -25,7 +21,6 @@ const NavBar2 = () => {
   const handleTypesChange = (event) => {
     try {
       const genreToFilter = event.target.textContent;
-      console.log(genreToFilter);
       dispatch(filterGamesByGenre(genreToFilter));
       console.log('Games per genre fetched successfully');
     } catch (error) {
@@ -40,8 +35,7 @@ const NavBar2 = () => {
   const goHome = () => {
     navigate('/home');
   };
-
-
+  
   return (
     <nav className={style.sidebar}>
       {genres.length > 1 ? (
@@ -57,8 +51,8 @@ const NavBar2 = () => {
       ) : null}
       <ul className={style.ul}>
         {genres &&
-          genres.map((genre, index) => (
-            <li className={style.genres} key={index} onClick={handleTypesChange} value={genre.name}>
+          genres.map((genre) => (
+            <li className={style.genres} key={genre.id} onClick={handleTypesChange} value={genre}>
               {genre.name}
             </li>
           ))}
