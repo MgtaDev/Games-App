@@ -101,10 +101,8 @@ const pageNumbers = generatePageNumbers();
                <Loading/>
               }
              
-             
-          
-          
-          {
+           </div>
+           {
             lastGame >= games.length
             ? ''
             :  <div className={style.pageButtons}>
@@ -135,9 +133,6 @@ const pageNumbers = generatePageNumbers();
             </button>
           </div>
           }
-         
-
-        </div>
         
         </div>
     )

@@ -42,3 +42,16 @@
   }
 }
 }
+@media (max-width:412px) {
+  .ButtonsContainer select{
+    width: 50%;
+  }
+  .ButtonsContainer{
+  position: relative;
+  left: 3%;
+  margin: auto;    
+  }
+
+}
+  
+  

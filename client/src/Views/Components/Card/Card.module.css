@@ -122,9 +122,11 @@ left: 15%;
     color: white;
     position: relative;
     padding: .3rem .5rem;
-    left: 38%;
+    left: 18%;
     top: 1.5%;
     border: 2px solid white;
+    z-index: 1;
+    margin-left: -4rem;
 }
 .delete:hover{
     cursor: pointer;

@@ -23,11 +23,6 @@ const Card = ({id, img, name, genres, release, ratings}) => {
     <div className={style.card}>
 
     <div className={style.cardTop}>
-    {containsLetters ? (
-          <button className={style.delete} onClick={handleDelete}>X</button>
-        ) : (
-          ''
-        )}
     <img src={img} alt='pic' />
     <h4>{name}</h4>
     </div>
@@ -50,9 +45,13 @@ const Card = ({id, img, name, genres, release, ratings}) => {
     <Link to={`/details/${id}`}>
     <button>Read more</button>
     </Link>
+    {containsLetters ? (
+          <button className={style.delete} onClick={handleDelete}>X</button>
+        ) : (
+          ''
+        )}
 
-    <div className={style.cardStats}>
-    </div>
+   
     </div>
     
     </div>

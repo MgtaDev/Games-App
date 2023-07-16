@@ -56,3 +56,20 @@ left: -1.2rem;
         float: right;  
     }
 }
+@media (max-width:412px){
+    .searchBar input{
+        width: 120%;
+        margin-left: -2rem;
+        margin-top: -3rem;
+    }
+    .searchBar button{
+        border-radius: 1rem;
+        position: relative;
+        margin-top: -2.2rem;
+        left: 0%;
+    }
+    .searchBar{
+        margin: auto;
+    }
+   
+}

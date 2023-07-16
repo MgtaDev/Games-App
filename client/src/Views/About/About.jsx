@@ -72,9 +72,9 @@ export default function About(){
         </nav>
         {
             navM1 ? 
-            <p>Hola 👋, soy Daniel Passantino ✔️ Soy un programador Full Stack jr! <br />Me especializo en Frontend y Responsive Web Design
+            <p>Hola 👋, soy Daniel Passantino ✔️ Soy un programador Full Stack jr! <br />Me especializo en Frontend con react y Typescript
 
-            📚 Actualmente estoy estudiando Ingles, Frances, React Native y Next.js </p>
+            📚 Actualmente estoy estudiando Ingles, React Native y Next.js </p>
             : ''
         }
           {

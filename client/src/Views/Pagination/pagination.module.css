@@ -41,3 +41,20 @@ position: relative;
 .unselected {
     color: rgb(251, 251, 251)
 }
+@media (max-width:412px) {
+.cardsContainer{
+    margin: auto;
+    position: relative;
+    right: 7.5%;
+}
+.headerPagination h2{
+    margin-left: 2rem;
+}
+.pageButtons{
+    margin-top: 4rem;
+    position: relative;
+    right: 7.5%
+}
+}
+  
+  

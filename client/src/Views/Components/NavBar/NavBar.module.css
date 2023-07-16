@@ -192,3 +192,38 @@ text-align: center;
     font-size: 15px;
   }
 }
+@media (max-width:412px) {
+  .sidebar{
+    display: none;
+    flex-direction: row;
+  }
+  .navButtons{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: 0.3%;
+    margin: auto;
+  }
+  .navB{
+    font-size: 15px;
+    width: 90%;
+    margin:rem;
+  }
+  .navB2{
+    width: 100%;
+    font-size: 15px;
+  }
+  .topBar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .topBar a img{
+  position: relative;
+  }
+
+
+
+}
+
+
