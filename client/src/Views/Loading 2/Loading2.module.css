@@ -16,7 +16,8 @@
     width: 400px;
     position: relative;
     left: 0;
-    margin-top: 6em
+    margin-top: 10em;
+    margin-bottom: 5rem;
 }
 .title2{
     display: flex;

@@ -7,8 +7,8 @@ import { useEffect, useState } from 'react'
 const Landing = () => {
     const [text, setText] = useState("");
     const [isForwardTyping, setIsForwardTyping] = useState(true);
-    const landingText = "Welcome to A20's Gaming App";
-    const typingSpeed = 120; // milisegundos
+    const landingText = "Welcome to 110% Gaming App";
+    const typingSpeed = 150; // milisegundos
   
     useEffect(() => {
       let currentIndex = 0;

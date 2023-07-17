@@ -2,10 +2,10 @@
 body {
   margin: 0;
   font-size: 23px;
-  background-image: url('./Views/assets/backgroundLanding.jpeg');
+  background-image: url('./Views/assets/backgroundLanding.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  background-position:90%;
+  background-position:50%;
   background-color: rgb(39, 44, 55);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

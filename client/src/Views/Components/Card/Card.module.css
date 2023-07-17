@@ -69,7 +69,7 @@ margin-top: -.5rem;
     display: none;
 }
 .cardContent button{
-    background-color: #ff0000a2;
+    background-color: #00bfffa2;;
     border: none;
     color: white;
     /* border-top: solid .2rem #e2e3e3;; */
@@ -81,7 +81,7 @@ margin-top: -.5rem;
 }
 .cardContent button:hover{
     background-color: white;
-    color: #ff0000a2;
+    color: #00bfffa2;;
     transition: .5s;
 }
 .cardContent button:active{

@@ -36,7 +36,7 @@ position: relative;
     justify-content: center;
 }
 .selected {
-    color: #ff0000;
+    color: #00bfffa2;
 }
 .unselected {
     color: rgb(251, 251, 251)

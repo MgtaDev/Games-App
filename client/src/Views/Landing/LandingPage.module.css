@@ -3,7 +3,6 @@
 .Landing{
     color: white;   
     background-repeat: no-repeat;
-    background-image: url('../assets/backgroundLanding.jpeg');
     background-position: 20% ;
     background-size: cover;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -27,6 +26,8 @@
 }
 .img img{
   width: 400px;
+  margin-top: 9.8rem;
+  margin-bottom: 4rem;
 }
 
 .title{

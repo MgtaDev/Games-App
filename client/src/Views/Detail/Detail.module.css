@@ -103,7 +103,7 @@
 }
 .button button{
     border-radius: .5rem;
-    background-color: rgba(224, 30, 30, 0.7);
+    background-color: #00bfffa2;
     color: white;
     padding: .5rem 2rem;
     cursor: pointer;
@@ -112,6 +112,6 @@
 }
 .button button:hover{
     background-color: white;
-    color:rgba(224, 30, 30, 0.7);
+    color:#00bfffa2;
     transition: .5s;
 }
