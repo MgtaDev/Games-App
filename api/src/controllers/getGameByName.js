@@ -11,7 +11,6 @@ const getGamesByName = async (req, res) => {
     });
     console.log(responseDb)
 
-    // const response2 = await axios.get(`http://localhost:3001/gamesdb`);
     const dbGames = responseDb.map(game => ({
       id: game.id,
       name: game.name,

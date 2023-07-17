@@ -78,7 +78,6 @@ const CreateForm = () => {
       setErrors((prevErrors) => ({ ...prevErrors, platforms: '⚠️ You can only select up to 4 platforms' }));
       return;
     }
-
     setFormData((prevFormData) => ({
       ...prevFormData,
       platforms: [...prevFormData.platforms, value],

@@ -128,47 +128,114 @@ useEffect(() => {
   
     return icons;
   }
-  function renderIcons2(platforms) {
-  const uniquePlatforms = new Set(platforms); // Crea un conjunto de plataformas únicas
-
-  return Array.from(uniquePlatforms).map(platform => {
-
+  const renderIcons2 = (platforms) => {
+    const uniquePlatforms = new Set(platforms); // Crea un conjunto de plataformas únicas
+  
+    return Array.from(uniquePlatforms).map((platform, index) => {
+  
       switch (platform) {
-          case 'PlayStation 5':
-          case 'PlayStation 4':
-          case 'PlayStation 3':
-          case 'PS Vita':
-              return <><img className={style.filtericon} style={{ width: '50px' }} src={PlayStation} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></> ;
-          case 'Xbox Series S/X':
-          case 'Xbox One':
-          case 'Xbox 360':
-              return<><img className={style.filtericon} style={{ width: '50px' }} src={Xbox} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-          case 'PC':
-            return <><img className={style.filtericon} style={{ width: '50px' }} src={Steam} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-          case 'Linux':
-            return <><img className={style.filtericon} style={{ width: '50px' }} src={Linux} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-          case 'iOS':
-          case 'macOS':
-            return <><img className={style.filtericon} style={{ width: '50px' }} src={Apple} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-
-          case 'Nintendo Switch':
-          case 'Wii U':
-          case 'Nintendo 3DS':
-            return <><img className={style.filtericon} style={{ width: '50px' }} src={Nintendo} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-
-          case 'Web':
-            return <><img className={style.filtericon} style={{ width: '50px' }} src={Web} alt={platform} /><p className={style.availablePlatforms}>{platform}</p></>;
-            
-              default:
-              break;
+        case 'PlayStation 5':
+        case 'PlayStation 4':
+        case 'PlayStation 3':
+        case 'PS Vita':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={PlayStation}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'Xbox Series S/X':
+        case 'Xbox One':
+        case 'Xbox 360':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Xbox}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'PC':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Steam}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'Linux':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Linux}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'iOS':
+        case 'macOS':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Apple}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'Nintendo Switch':
+        case 'Wii U':
+        case 'Nintendo 3DS':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Nintendo}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+        case 'Web':
+          return (
+            <div key={index}>
+              <img
+                className={style.filtericon}
+                style={{ width: '50px' }}
+                src={Web}
+                alt={platform}
+              />
+              <p className={style.availablePlatforms}>{platform}</p>
+            </div>
+          );
+  
+        default:
+          return (
+            <div key={index}>
+              {/* Elemento por defecto para otras plataformas */}
+            </div>
+          );
       }
-
-      return (
-          <div key={platform}>
-          </div>
-      );
-  });
-}
+    });
+  };
     return(
         <>
         {
@@ -186,9 +253,8 @@ useEffect(() => {
                 <h3>{game?.name}</h3>
                 <h4 className={style.header}>Genres: </h4>
                 <p >{genresJoined}</p>
-                <h4 className={style.header}>Realease date: <p>{game.release}</p></h4>
-                <h4 className={style.header}>Platforms:  <p className={style.platforms}>{renderIcons(game.platforms)}</p></h4>
-
+                <h4 className={style.header}>Realease date:</h4> <p>{game.release}</p>
+                <h4 className={style.header}>Platforms:  </h4> <div className={style.platforms}>{renderIcons(game.platforms)}</div>
                 <h4 className={style.header}>Ratings: {renderStars(game.ratings)}</h4>
 
 
@@ -207,7 +273,7 @@ useEffect(() => {
                 <h4>Description</h4>
                 <p>{game.description}</p>
                 <h4>Available for:</h4>
-                <p className={style.availablePlatforms}>{renderIcons2(game.platforms)}</p>
+                <div className={style.availablePlatforms}>{renderIcons2(game.platforms)}</div>
               </div>
 
           </div>

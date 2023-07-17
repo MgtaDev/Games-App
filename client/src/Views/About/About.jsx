@@ -81,9 +81,9 @@ export default function About(){
             navM2 ? 
             <div className={style.Portafolio}>
             <p>Todos mis proyectos estan disponibles en mi portafolio personal</p>
-            <p data-label="Register" className={style.rainbowHover}>
+            <div data-label="Register" className={style.rainbowHover}>
             <p className={style.sp}><a target='_blank' href='https://mgtadev.github.io/MyPersonalPortafolio/'>Click here!</a></p>
-            </p>
+            </div>
             </div>
             : ''
         }
