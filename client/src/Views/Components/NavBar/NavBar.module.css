@@ -12,7 +12,7 @@
   margin: -.4rem;
   padding: 0;
   position: relative;
-  left: -2%;
+  left: 4.5%;
   top: 30%;
 }
 .topBar a img:hover{
@@ -112,7 +112,7 @@ transition: .5s;
   list-style: none; 
   padding: 0;
   float: left;
-  margin-bottom: -15rem;
+  margin-bottom: -11rem;
 }
 
 .sidebar li {
