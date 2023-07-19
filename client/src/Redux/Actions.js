@@ -1,5 +1,5 @@
 import axios from "axios"
-import { ADD_GAMES, ADD_GAMES_API, ADD_GAMES_DB, DELETE_GAME, FILTER_BY_HIGH_RATE, FILTER_BY_MIN_RATE, FILTER_GAMES_BY_GENRE, GET_GAMES_PER_NAME, GET_GENRES, SET_GENRES_RENDER, SET_ORDER_A_Z, SET_ORDER_Z_A, SHOW_ALL_GAMES,  } from "./Types"
+import { ADD_GAMES, ADD_GAMES_API, ADD_GAMES_DB, DELETE_GAME, FILTER_BY_GAMES_PLATFORM, FILTER_BY_HIGH_RATE, FILTER_BY_MIN_RATE, FILTER_GAMES_BY_GENRE, GET_GAMES_PER_NAME, GET_GENRES, SET_GENRES_RENDER, SET_ORDER_A_Z, SET_ORDER_Z_A, SHOW_ALL_GAMES,  } from "./Types"
 import swal from "sweetalert"
 
 export const addGames = ()=> {
@@ -108,6 +108,12 @@ export const filterGamesByGenre = (genre) => ({
   type: FILTER_GAMES_BY_GENRE,
   payload: genre 
 });
+
+export const filterGamesByPlatform = (platform) => ({
+  type: FILTER_BY_GAMES_PLATFORM,
+  payload: platform
+});
+
 
 export const reloadGames = () => ({
   type: FILTER_GAMES_BY_GENRE,

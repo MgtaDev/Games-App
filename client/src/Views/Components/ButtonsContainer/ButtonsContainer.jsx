@@ -33,12 +33,15 @@ import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGam
       case 'db' :
            dispatch(addGamesDb())
           break;
-        
+
       default:
         break
     }
   };
 
+  const resetFilter = () => {
+    dispatch(addGames())
+  }
 
   
   return (
@@ -58,6 +61,10 @@ import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGam
       <option value="api">Api</option>
       <option value="db">Created</option>
       </select>
+
+      <button onClick={resetFilter} className={styles.button}>
+        Reset Filter
+      </button>
     </div>
   
   )

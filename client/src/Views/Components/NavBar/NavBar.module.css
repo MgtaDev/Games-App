@@ -112,7 +112,7 @@ transition: .5s;
   list-style: none; 
   padding: 0;
   float: left;
-  margin-bottom: -11rem;
+  margin-bottom: -45rem;
 }
 
 .sidebar li {
@@ -136,6 +136,12 @@ transition: .5s;
   font-size: 14px;
   opacity: 70%;position: relative;
 text-align: center;
+}
+
+.platforms{
+  color: white;
+  text-align: center;
+
 }
 ::-webkit-scrollbar {
   width: 12px; /* Ancho de la scrollbar */

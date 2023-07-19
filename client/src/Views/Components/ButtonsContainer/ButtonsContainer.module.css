@@ -54,4 +54,14 @@
 
 }
   
-  
+.button{
+  margin: 1rem;
+  padding: .5rem .4rem ;
+  width: 12%;
+  border-radius: .3rem;
+  background-color: rgb(35, 187, 164);;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  left: 20%;
+}

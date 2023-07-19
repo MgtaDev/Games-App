@@ -4,6 +4,10 @@ margin: 1rem;
 position: relative;
 left: 0rem;
 }
+.error{
+    color: white;
+    font-size: 15px;
+}
 .searchBar input{
     color: white;
     border-radius: .3rem;
