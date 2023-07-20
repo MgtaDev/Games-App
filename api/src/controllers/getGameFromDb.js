@@ -1,4 +1,4 @@
-const { Videogame, Genre } = require('../db.js')
+const { Videogame } = require('../db.js')
 //Solicitamos nuestra tabla de pokemons a nuestra db para proceder con la respectiva funcion
 //Obtenemos los pokemones desde nuestra instancia de nuestra base de datos
 

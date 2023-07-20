@@ -2,7 +2,7 @@
 import style from "./About.module.css"
 import myPhoto from '../assets/Myphoto.jpeg'
 import { useState } from "react";
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Github from '../assets/github.png'
 import Linkedin from '../assets/linkedin.png'
 import Gmail from '../assets/gmail.png'
