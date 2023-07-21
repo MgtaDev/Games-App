@@ -2,9 +2,9 @@ import styles from './ButtonsContainer.module.css'
 import { useDispatch } from 'react-redux';
 import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGamesDb, addGamesApi  } from '../../../Redux/Actions'
 
-  const ButtonsContainer = () => {
+  const ButtonsContainer = ({setSelectedPage, setCurrentPage}) => {
   const dispatch = useDispatch();
-  
+
 
   // Filtrado
   const handleFiltrosChange = (event) => {
@@ -12,27 +12,41 @@ import { orderA_Z, orderZ_A, filterByHighRate, filterByMinRate, addGames, addGam
     switch (selectedOption) {
       case 'orderAZ':
         dispatch(orderA_Z());
+        setSelectedPage(1)
+        setCurrentPage(1)
         break;
       case 'orderZA':
         dispatch(orderZ_A());
+        setSelectedPage(1)
+        setCurrentPage(1)
         break;
       case 'highRate':
         dispatch(filterByHighRate());
+        setSelectedPage(1)
+        setCurrentPage(1)
         break;
       case 'minRate':
         dispatch(filterByMinRate());
+        setSelectedPage(1)
+        setCurrentPage(1)
         break;
       case 'all' :
           dispatch(addGames())
+          setSelectedPage(1)
+          setCurrentPage(1)
           break;
     
       case 'api' :
           dispatch(addGamesApi())
+          setSelectedPage(1)
+          setCurrentPage(1)
           break;
 
       case 'db' :
            dispatch(addGamesDb())
-          break;
+           setSelectedPage(1)
+           setCurrentPage(1)
+           break;
 
       default:
         break

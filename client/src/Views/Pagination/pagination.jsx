@@ -48,7 +48,7 @@ const pageNumbers = generatePageNumbers();
         <div className={style.Pagination}>
 
             {
-              games.length === 1
+              games.length < 0
               ? ''
               : <div className={style.pageButtons}>
               <button className={style.unselected} onClick={handlePrevPage} disabled={currentPage === 1}>
@@ -79,8 +79,8 @@ const pageNumbers = generatePageNumbers();
             </div>
             }
           {
-            games.length > 1 
-            ? <><h2 className={style.headerPagination}> Games: <ButtonsContainer /></h2></>
+            games.length > 0 
+            ? <><h2 className={style.headerPagination}> Games: <ButtonsContainer setCurrentPage = {setCurrentPage} setSelectedPage = {setSelectedPage} /></h2></>
             : ''
           }
             <div className={style.cardsContainer}>

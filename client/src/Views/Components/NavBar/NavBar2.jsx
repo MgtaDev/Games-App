@@ -3,9 +3,11 @@ import style from './NavBar.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getGenres, filterGamesByGenre, addGames, filterGamesByPlatform } from '../../../Redux/Actions';
 import { useNavigate } from 'react-router-dom';
+import swal from 'sweetalert'
 
 const NavBar2 = () => {
   const genres = useSelector((state) => state.genres);
+  const games = useSelector((state) => state.games)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -18,8 +20,13 @@ const NavBar2 = () => {
       .catch((err) => console.error(err));
   }, [dispatch]);
 
-  const handleTypesChange = (event) => {
+  const handleGenresChange = (event) => {
     try {
+      if (games.length === 0) {
+        swal("ERROR", "There is no game with this genre", "error")
+        return;
+      }
+
       const genreToFilter = event.target.textContent;
       dispatch(filterGamesByGenre(genreToFilter));
       console.log('Games per genre fetched successfully');
@@ -29,6 +36,11 @@ const NavBar2 = () => {
   };
   const handlePlatformsChange = (event) => {
     try {
+
+      if (games.length === 0) {
+        swal("ERROR", "There is no game with this platform", "error")
+        return;
+      }
       const genreToFilter = event.target.textContent;
       dispatch(filterGamesByPlatform(genreToFilter));
       console.log('Games per genre fetched successfully');
@@ -78,17 +90,18 @@ const NavBar2 = () => {
       <ul className={style.ul}>
         {genres &&
           genres.map((genre) => (
-            <li className={style.genres} key={genre.id} onClick={handleTypesChange} value={genre}>
+            <li className={style.genres} key={genre.id} onClick={handleGenresChange} value={genre}>
               {genre.name}
             </li>
           ))}
          <p className={style.platforms}>Platforms</p>
-           {platforms &&
+           {genres ?
           platforms.map((platform) => (
             <li className={style.genres} key={platform.id} onClick={handlePlatformsChange} value={platform}>
               {platform.name}
             </li>
-          ))}
+          )) : '' 
+        }
       </ul>
     </nav>
   );
