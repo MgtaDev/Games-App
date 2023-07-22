@@ -16,7 +16,8 @@
     "redux-thunk": "^2.3.0",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.7.16",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.88.2"
   },
   "scripts": {
     "start": "react-scripts start --openssl-legacy-provider",
