@@ -207,8 +207,8 @@ text-align: center;
     display: flex;
     flex-direction: row;
     position: relative;
-    left: 0.3%;
     margin: auto;
+    margin-top: 1rem;
   }
   .navB{
     font-size: 15px;
@@ -221,11 +221,15 @@ text-align: center;
   }
   .topBar{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
   }
   .topBar a img{
   position: relative;
+  left: 31%;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  width: 150px;
   }
 
 

@@ -64,7 +64,6 @@ left: 0rem;
     .searchBar input{
         width: 120%;
         margin-left: -2rem;
-        margin-top: -3rem;
     }
     .searchBar button{
         border-radius: 1rem;
