@@ -3,7 +3,7 @@ import { ADD_GAMES, ADD_GAMES_API, ADD_GAMES_DB, DELETE_GAME, FILTER_BY_GAMES_PL
 import swal from "sweetalert"
 
 export const addGames = ()=> {
-    const myUrl = 'http://localhost:3001/games'
+    const myUrl = '/games'
     return async (dispatch)=> {
     try {
         const { data } = await axios.get(myUrl)
@@ -19,7 +19,7 @@ export const addGames = ()=> {
     }
     }
 export const addGamesApi= ()=> {
-      const myUrl = 'http://localhost:3001/gamesapi'
+      const myUrl = '/gamesapi'
       return async (dispatch)=> {
       try {
           const { data } = await axios.get(myUrl)
@@ -36,7 +36,7 @@ export const addGamesApi= ()=> {
     }
   
 export const addGamesDb= ()=> {
-    const myUrl = 'http://localhost:3001/gamesdb'
+    const myUrl = '/gamesdb'
     return async (dispatch)=> {
     try {
         const { data } = await axios.get(myUrl)
@@ -85,7 +85,7 @@ export const getGenres = (payload) => ({
 export const getGameForSearchBar = (name) => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:3001/gamesbyname/search?name=${name}`)
+      const response = await axios.get(`/gamesbyname/search?name=${name}`)
       dispatch({
         type: GET_GAMES_PER_NAME,
         payload: response.data
@@ -115,15 +115,12 @@ export const reloadGames = () => ({
 
 export const deleteGame = (id) => {
   return (dispatch) => {
-    fetch(`http://localhost:3001/games/${id}`, {
-      method: 'DELETE',
-    })
-    .then(res => res.json())
-    .then(data => {
-      console.log('Successfully deleted game:', data);
-      swal('GAME DELETED','The game was succesfully deleted', 'success')
-      dispatch({ type: DELETE_GAME, payload: id });
-    })
-    .catch(error => swal('ERROR','There was an error deleting the game', 'error'));
+    axios.delete(`/games/${id}`)
+      .then(response => {
+        console.log('Successfully deleted game:', response.data);
+        swal('GAME DELETED','The game was succesfully deleted', 'success')
+        dispatch({ type: DELETE_GAME, payload: id });
+      })
+      .catch(error => swal('ERROR','There was an error deleting the game', 'error'));
   };
 };
