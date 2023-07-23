@@ -1,7 +1,8 @@
 //Aqui levantamos nuestro servidor. Y nos lo traemos de app.js
 const server = require("./src/app.js");
 const {conn}=require("./src/db.js")
-const port = process.env.PORT || 3001;
+const port = process.env.PORT ;
+require('dotenv').config();
 
 (async () => {
   try {
