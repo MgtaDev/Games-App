@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { Videogame } = require('../db.js');
-
+require('dotenv').config()
+const { API_KEY } = process.env
 
 const getGamesByName = async (req, res) => {
   const { name } = req.query;
@@ -20,7 +21,7 @@ const getGamesByName = async (req, res) => {
       genres: game.genres
     }));
 
-    const response = await axios.get(`https://api.rawg.io/api/games?search=${name}&page_size=15&key=bfd3e1995b9c42718220bbd425e2fdaf`);
+    const response = await axios.get(`https://api.rawg.io/api/games?search=${name}&page_size=15&key=${API_KEY}`);
     const games = response.data.results.map(game => ({
       id: game.id,
       name: game.name,

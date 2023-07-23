@@ -1,5 +1,7 @@
 const axios = require('axios');
 const { Videogame, Type } = require('../db.js')
+require('dotenv').config()
+const { API_KEY } = process.env
 
 const getGames = async (req, res) => {
   try {
@@ -9,7 +11,7 @@ const getGames = async (req, res) => {
     }); // esperamos a que se resuelva la promesa de findAll()
 
     for (let page = 1; page <= 2; page++) {
-      const url = `https://api.rawg.io/api/games?key=bfd3e1995b9c42718220bbd425e2fdaf&page=${page}&page_size=40`;
+      const url = `https://api.rawg.io/api/games?key=${API_KEY}&page=${page}&page_size=40`;
       const response = await axios.get(url);
       const games = response.data.results;
 
