@@ -8,9 +8,10 @@ require('dotenv').config()
 server.use(express.json())
 
 server.use(cors({
-  origin:  'https://games-app-pied.vercel.app',
+  origin: 'http://localhost:3000'
 }));
 
 server.use('/', router);
 
 module.exports = server;
+// origin:  'https://games-app-pied.vercel.app',

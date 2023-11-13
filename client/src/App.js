@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import style from './App.css'
 import {Landing, Home, CreateForm, Detail, About} from './Views/index'
 import axios from 'axios';
-axios.defaults.baseURL = "games-app-production.up.railway.app"
+// axios.defaults.baseURL = "games-app-production.up.railway.app"
+axios.defaults.baseURL = 'http://localhost:3001'
 
 
 function App() {
